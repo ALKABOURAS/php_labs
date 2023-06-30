@@ -1,0 +1,28 @@
+{
+  "name": " ",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": "",
+  "license": "",
+  "author": "",
+  "scripts": {
+    "build": "parcel build index.php",
+    "dev": "parcel index.php --open",
+    "start": "npm run build && npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "better-sqlite3": "^8.4.0",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "handlebars": "^4.7.7",
+    "install": "^0.13.0",
+    "nodemon": "^2.0.22",
+    "npm": "^9.6.7",
+    "path": "^0.12.7",
+    "sqlite3": "^5.1.6"
+  }
+}
