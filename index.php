@@ -1,8 +1,12 @@
 <?php
+// Ελέγχει αν έχει γίνει submit της φόρμας αλλίως μένει κενό
 $searchResults = isset($_GET['searchResults']) ? $_GET['searchResults'] : '';
-
+// αν έχει γίνει submit της φόρμας και έχει επιστραφεί κάποιο αποτέλεσμα
 if (!empty($searchResults)) {
+    // κάνουμε decode το αποτέλεσμα για να εμφανιστεί σωστά στην σελίδα (μορφή html
     $decodedSearchResults = urldecode($searchResults);
+    // περιμένουμε το DOM να φορτώσει και μετά εκτελούμε μια ανώνυμη (λάμδα) συνάρτηση που θα εμφανίσει το αποτέλεσμα στον
+    // πίνακα που έχουμε δημιουργήσει στην σελίδα (γράφοντας στην innerHTML του πίνακα το αποτέλεσμα)
     echo '<script>document.addEventListener("DOMContentLoaded", function() { document.getElementById("searchResults").innerHTML = decodeURIComponent("'.urlencode($searchResults).'");});</script>';
 }
 ?>
@@ -328,6 +332,7 @@ if (!empty($searchResults)) {
             <input type="submit" id="search" value="Αναζήτηση">
             <input type="button" id="reset_table" value="Εκκαθάριση" onclick="clearTable()">
             <table id="searchResults" class="mytable">
+                <tr><th>Όνομα</th><th>Διεύθυνση</th><th>Email</th><th>Χώρα</th><th>Τ.Κ.</th><th>Τηλέφωνο</th><th>Πιστωτική</th><th>Αριθμός</th></tr>
             </table>
         </fieldset>
     </form>
